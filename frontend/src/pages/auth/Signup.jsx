@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,6 +20,10 @@ export default function Signup() {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const handleClick = ()=>{
+        navigate('/login')
     }
 
     return (
@@ -51,7 +57,7 @@ export default function Signup() {
                     </button>
                 </form>
                 <p className="text-center text-gray-400 mt-4">
-                    Already have an account? <a href="#" className="text-blue-400 hover:underline">Log in</a>
+                    Already have an account? <a onClick={handleClick}  className="text-blue-400 hover:underline cursor-pointer ">Log in</a>
                 </p>
             </div>
         </div>

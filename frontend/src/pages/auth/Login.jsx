@@ -52,7 +52,7 @@ export default function Login() {
                     </button>
                 </form>
                 <p className="text-center text-gray-400 mt-4">
-                    dont have account? <a href="#" className="text-blue-400 hover:underline">Sign up</a>
+                    dont have account? <a onClick={()=>{navigate("/signup")}} className="text-blue-400 hover:underline cursor-pointer">Sign up</a>
                 </p>
             </div>
         </div>
